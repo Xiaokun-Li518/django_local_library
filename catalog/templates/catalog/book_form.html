@@ -1,0 +1,16 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+    {% if user.is_staff %}
+    <h1>Create/Update a book</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
+    {% else %}
+        <h1 class="text-danger">You are not authorized to see this page!!!</h1>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+{% if perms.catalog.can_mark_returned %}
+<h1>Create/Update an Author</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+</form>
+{% else %}
+<h1 class="text-danger">You are not authorized to <strong>Create/Update</strong>!!</h1>
+{% endif %}
+{% endblock %}
