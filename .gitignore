@@ -128,9 +128,3 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Text backup files
-*.bak
-
-# Database
-*.sqlite3
-
